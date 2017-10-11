@@ -9,6 +9,7 @@ ALL_LIST=\
 	seldon_spark_build \
 	seldonio_seldon_control \
 	seldonio_seldon_server \
+	seldonio_seldon_server_maintenance \
 	seldonio_seldon_stream \
 	seldonio_examples_ml100k \
 	seldonio_examples_ml10m \
@@ -18,6 +19,7 @@ ALL_LIST=\
 	seldonio_mysql \
 	seldonio_grafana \
 	seldonio_iago \
+	seldonio_locust \
 	seldonio_influxdb \
 	seldonio_zookeeper_k8s \
 	seldonio_kafka_k8s \
@@ -25,10 +27,12 @@ ALL_LIST=\
 	seldonio_tdagent_node \
 	seldonio_iris_vw \
 	seldonio_iris_xgboost \
+	seldonio_iris_xgboost_rpc \
 	seldonio_iris_scikit \
 	seldonio_finefoods_xgboost \
 	seldonio_stream_itemsim \
-	seldonio_examples_tensorflow_deep_mnist
+	seldonio_examples_tensorflow_deep_mnist \
+	seldonio_proxy_server 
 
 
 NO_PUBLISH_LIST=\
@@ -46,6 +50,8 @@ build_seldonio_seldon_control: build_versions_generated
 	@./dobuild seldonio_seldon_control
 build_seldonio_seldon_server: build_versions_generated
 	@./dobuild seldonio_seldon_server
+build_seldonio_seldon_server_maintenance: build_versions_generated
+	@./dobuild seldonio_seldon_server_maintenance
 build_seldonio_seldon_stream: build_versions_generated
 	@./dobuild seldonio_seldon_stream
 build_seldonio_examples_ml100k: build_versions_generated
@@ -62,6 +68,8 @@ build_seldonio_grafana: build_versions_generated
 	@./dobuild seldonio_grafana
 build_seldonio_iago: build_versions_generated
 	@./dobuild seldonio_iago
+build_seldonio_locust: build_versions_generated
+	@./dobuild seldonio_locust
 build_seldonio_mysql: build_versions_generated
 	@./dobuild seldonio_mysql
 build_seldonio_influxdb: build_versions_generated
@@ -78,6 +86,8 @@ build_seldonio_iris_vw: build_versions_generated
 	@./dobuild seldonio_iris_vw
 build_seldonio_iris_xgboost: build_versions_generated
 	@./dobuild seldonio_iris_xgboost
+build_seldonio_iris_xgboost_rpc: build_versions_generated
+	@./dobuild seldonio_iris_xgboost_rpc
 build_seldonio_iris_scikit: build_versions_generated
 	@./dobuild seldonio_iris_scikit
 build_seldonio_finefoods_xgboost: build_versions_generated
@@ -86,6 +96,9 @@ build_seldonio_stream_itemsim: build_versions_generated
 	@./dobuild seldonio_stream_itemsim
 build_seldonio_examples_tensorflow_deep_mnist: build_versions_generated
 	@./dobuild seldonio_examples_tensorflow_deep_mnist
+build_seldonio_proxy_server: build_versions_generated
+	@./dobuild seldonio_proxy_server
+
 
 #publish
 publish_seldonio_pyseldon: build_versions_generated
@@ -94,6 +107,8 @@ publish_seldonio_seldon_control: build_versions_generated
 	@./dopublish seldonio_seldon_control
 publish_seldonio_seldon_server: build_versions_generated
 	@./dopublish seldonio_seldon_server
+publish_seldonio_seldon_server_maintenance: build_versions_generated
+	@./dopublish seldonio_seldon_server_maintenance
 publish_seldonio_seldon_stream: build_versions_generated
 	@./dopublish seldonio_seldon_stream
 publish_seldonio_examples_ml100k: build_versions_generated
@@ -112,6 +127,8 @@ publish_seldonio_grafana: build_versions_generated
 	@./dopublish seldonio_grafana
 publish_seldonio_iago: build_versions_generated
 	@./dopublish seldonio_iago
+publish_seldonio_locust: build_versions_generated
+	@./dopublish seldonio_locust
 publish_seldonio_influxdb: build_versions_generated
 	@./dopublish seldonio_influxdb
 publish_seldonio_zookeeper_k8s: build_versions_generated
@@ -126,6 +143,8 @@ publish_seldonio_iris_vw: build_versions_generated
 	@./dopublish seldonio_iris_vw
 publish_seldonio_iris_xgboost: build_versions_generated
 	@./dopublish seldonio_iris_xgboost
+publish_seldonio_iris_xgboost_rpc: build_versions_generated
+	@./dopublish seldonio_iris_xgboost_rpc
 publish_seldonio_iris_scikit: build_versions_generated
 	@./dopublish seldonio_iris_scikit
 publish_seldonio_finefoods_xgboost: build_versions_generated
@@ -134,6 +153,8 @@ publish_seldonio_stream_itemsim: build_versions_generated
 	@./dopublish seldonio_stream_itemsim
 publish_seldonio_examples_tensorflow_deep_mnist: build_versions_generated
 	@./dopublish seldonio_examples_tensorflow_deep_mnist
+publish_seldonio_proxy_server: build_versions_generated
+	@./dopublish seldonio_proxy_server
 
 build_all:
 	@for item in $(ALL_LIST) ; do \
